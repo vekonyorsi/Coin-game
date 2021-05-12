@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controller.LaunchController">
    <children>
       <Label layoutX="120.0" layoutY="55.0" prefHeight="68.0" prefWidth="459.0" text="Welcome to the Coin Game!">
@@ -34,22 +33,22 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label alignment="CENTER" layoutX="361.0" layoutY="208.0" prefHeight="20.0" prefWidth="124.0">
+      <Label fx:id="p1error" alignment="CENTER" layoutX="361.0" layoutY="208.0" prefHeight="20.0" prefWidth="124.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="361.0" layoutY="287.0" prefHeight="20.0" prefWidth="124.0">
+      <Label fx:id="p2error" alignment="CENTER" layoutX="361.0" layoutY="287.0" prefHeight="20.0" prefWidth="124.0" textFill="RED">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="startButton" layoutX="298.0" layoutY="340.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" text="Start">
+      <Button fx:id="startButton" layoutX="298.0" layoutY="340.0" mnemonicParsing="false" onAction="#startAction" prefHeight="40.0" prefWidth="103.0" text="Start">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="exitButton" layoutX="527.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" text="Exit">
+      <Button fx:id="exitButton" layoutX="527.0" layoutY="410.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="40.0" prefWidth="103.0" text="Exit">
          <font>
             <Font size="18.0" />
          </font>
