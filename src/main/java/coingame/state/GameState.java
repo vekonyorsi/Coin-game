@@ -25,7 +25,6 @@ public class GameState {
     public GameState(){
     }
 
-
     public void firstChoice(int index) {
         for(int i = index; i < starters.length; i++){
             coinRow.add(starters[i]);

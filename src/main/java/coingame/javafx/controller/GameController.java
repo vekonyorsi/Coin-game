@@ -34,27 +34,51 @@ public class GameController {
 
     private GameState state;
 
+
+
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
             p1nameText.setText(p1name);
-            p2nameText.setText(p2name);
-            //player1.setName(p1name);
-            //player2.setName(p2name);
         });
 
     }
 
     public void openAction(ActionEvent actionEvent) throws Exception {
-        player1 = new Player(p1nameText.getText(), 1, 0);
-        //player2 = new Player(p2nameText.getText(), 2, 0);
+        player1 = new Player(p1name, 1, 0);
+        player2 = new Player(p2name, 2, 0);
         state = new GameState();
-        String gomb = ((Button) actionEvent.getSource()).getId();
-        String [] tomb = gomb.split("_");
-        int index = Integer.parseInt(tomb[1]);
+        String button = ((Button) actionEvent.getSource()).getId();
+        String val = ((Button) actionEvent.getSource()).getText();
+        String [] array = button.split("_");
+        int index = Integer.parseInt(array[1]);
+        player1.setScore(Integer.parseInt(val));
         state.firstChoice(index);
-        System.out.println(gomb);
-        System.out.println(state.toString());
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/game2.fxml"));
+        Parent root = fxmlLoader.load();
+
+        fxmlLoader.<GameController2>getController().p1.setText(player1.getName());
+        fxmlLoader.<GameController2>getController().p2.setText(player2.getName());
+        fxmlLoader.<GameController2>getController().p2.setTextFill(javafx.scene.paint.Color.GREEN);
+        fxmlLoader.<GameController2>getController().p1_score.setText(Integer.toString(player1.getScore()));
+        fxmlLoader.<GameController2>getController().p2_score.setText(Integer.toString(player2.getScore()));
+        fxmlLoader.<GameController2>getController().new_1.setText(String.valueOf(state.getCoinRow().get(0)));
+        fxmlLoader.<GameController2>getController().new_2.setText(String.valueOf(state.getCoinRow().get(1)));
+        fxmlLoader.<GameController2>getController().new_3.setText(String.valueOf(state.getCoinRow().get(2)));
+        fxmlLoader.<GameController2>getController().new_4.setText(String.valueOf(state.getCoinRow().get(3)));
+        fxmlLoader.<GameController2>getController().new_5.setText(String.valueOf(state.getCoinRow().get(4)));
+        fxmlLoader.<GameController2>getController().new_6.setText(String.valueOf(state.getCoinRow().get(5)));
+        fxmlLoader.<GameController2>getController().new_7.setText(String.valueOf(state.getCoinRow().get(6)));
+        fxmlLoader.<GameController2>getController().new_8.setText(String.valueOf(state.getCoinRow().get(7)));
+        fxmlLoader.<GameController2>getController().new_9.setText(String.valueOf(state.getCoinRow().get(8)));
+        fxmlLoader.<GameController2>getController().new_10.setText(String.valueOf(state.getCoinRow().get(9)));
+        fxmlLoader.<GameController2>getController().new_11.setText(String.valueOf(state.getCoinRow().get(10)));
+        fxmlLoader.<GameController2>getController().SetPlayers(player1, player2);
+        fxmlLoader.<GameController2>getController().SetState(state);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
 
     }
 
@@ -62,6 +86,7 @@ public class GameController {
         this.p1name = p1name;
         this.p2name = p2name;
     }
+
 
 
 }
