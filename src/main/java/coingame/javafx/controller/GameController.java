@@ -1,5 +1,6 @@
 package coingame.javafx.controller;
 
+import coingame.state.GameState;
 import coingame.state.Player;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 import java.util.ArrayList;
 
+
 @Slf4j
 public class GameController {
     @FXML
@@ -30,6 +32,8 @@ public class GameController {
     private String p1name;
     private String p2name;
 
+    private GameState state;
+
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
@@ -41,9 +45,16 @@ public class GameController {
 
     }
 
-    public void nyitAction(ActionEvent actionEvent) throws Exception {
+    public void openAction(ActionEvent actionEvent) throws Exception {
         player1 = new Player(p1nameText.getText(), 1, 0);
-        player2 = new Player(p2nameText.getText(), 2, 0);
+        //player2 = new Player(p2nameText.getText(), 2, 0);
+        state = new GameState();
+        String gomb = ((Button) actionEvent.getSource()).getId();
+        String [] tomb = gomb.split("_");
+        int index = Integer.parseInt(tomb[1]);
+        state.firstChoice(index);
+        System.out.println(gomb);
+        System.out.println(state.toString());
 
     }
 
@@ -52,8 +63,5 @@ public class GameController {
         this.p2name = p2name;
     }
 
-    public void exitGame(ActionEvent actionEvent) {
-        Platform.exit();
-    }
 
 }
