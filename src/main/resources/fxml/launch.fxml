@@ -24,12 +24,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="311.0" layoutY="168.0">
+      <TextField fx:id="p1name" layoutX="311.0" layoutY="168.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField layoutX="311.0" layoutY="247.0">
+      <TextField fx:id="p2name" layoutX="311.0" layoutY="247.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -44,12 +44,12 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Button layoutX="298.0" layoutY="340.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" text="Start">
+      <Button fx:id="startButton" layoutX="298.0" layoutY="340.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" text="Start">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="527.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" text="Exit">
+      <Button fx:id="exitButton" layoutX="527.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" text="Exit">
          <font>
             <Font size="18.0" />
          </font>
