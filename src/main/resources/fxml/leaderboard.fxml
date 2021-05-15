@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controller.LeaderboardController">
    <top>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="700.0" BorderPane.alignment="CENTER">
@@ -24,7 +23,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="66.0" onAction="#exitGame" text="Exit">
+            <Button mnemonicParsing="false" onAction="#exitGame" prefHeight="40.0" prefWidth="66.0" text="Exit">
                <font>
                   <Font size="18.0" />
                </font>
@@ -33,14 +32,14 @@
       </HBox>
    </bottom>
    <center>
-      <TableView prefHeight="395.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="leaderboardTable" prefHeight="395.0" prefWidth="700.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="116.6666667" text="Player1 name" />
-          <TableColumn minWidth="0.0" prefWidth="116.6666667" text="Player1 score" />
-            <TableColumn prefWidth="116.6666667" text="Player2 name" />
-            <TableColumn prefWidth="116.6666667" text="Player2 score" />
-            <TableColumn prefWidth="116.6666667" text="Winner" />
-            <TableColumn minWidth="0.0" prefWidth="116.6666667" text="Date" />
+          <TableColumn fx:id="player1Name" prefWidth="116.6666667" text="Player1 name" />
+          <TableColumn fx:id="player1Score" minWidth="0.0" prefWidth="116.6666667" text="Player1 score" />
+            <TableColumn fx:id="player2Name" prefWidth="116.6666667" text="Player2 name" />
+            <TableColumn fx:id="player2Score" prefWidth="116.6666667" text="Player2 score" />
+            <TableColumn fx:id="winner" prefWidth="116.6666667" text="Winner" />
+            <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="116.6666667" text="Date" />
         </columns>
       </TableView>
    </center>

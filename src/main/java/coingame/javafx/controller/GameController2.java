@@ -1,5 +1,7 @@
 package coingame.javafx.controller;
 
+import coingame.results.GameResult;
+import coingame.results.GameResultSerializer;
 import coingame.state.GameState;
 import coingame.state.Player;
 import javafx.application.Platform;
@@ -19,6 +21,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 public class GameController2 {
@@ -110,8 +114,13 @@ public class GameController2 {
     private void won(ObservableValue<? extends String> observableValue, String win, String win2) {
         winner.setText(win2 + " won the game!");
         p1.setTextFill(Color.BLACK);
+        GameResult result = new GameResult(state.getPlayer1Name(), state.getPlayer2Name(), win2,
+                state.getPlayer1ScoreProperty().getValue(), state.getPlayer2ScoreProperty().getValue(),
+                ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd. - HH:mm:ss"  )));
+        GameResultSerializer.serialize(result);
 
     }
+
 
     private void buttonName(){
         new_1.setText(state.getList().get(0).toString());
@@ -156,6 +165,7 @@ public class GameController2 {
     public void exitGame(ActionEvent actionEvent) {
         Platform.exit();
     }
+
 
 
 }
