@@ -78,7 +78,7 @@ public class GameController2 {
         Platform.runLater(() -> {
             p1.setText(state.getPlayer1Name());
             p2.setText(state.getPlayer2Name());
-            p2.setTextFill(Color.GREEN);
+            p2.setTextFill(Color.GOLD);
             p1_score.setText(state.getPlayer1ScoreProperty().getValue().toString());
             state.getPlayer1ScoreProperty().addListener(this::player1Score);
             state.getPlayer2ScoreProperty().addListener(this::player2Score);
@@ -101,19 +101,19 @@ public class GameController2 {
 
     private void currentPlayer(ObservableValue<? extends Boolean> observableValue, Boolean oldCurrent, Boolean newCurrent) {
         if(newCurrent){
-            p1.setTextFill(Color.GREEN);
-            p2.setTextFill(Color.BLACK);
+            p1.setTextFill(Color.GOLD);
+            p2.setTextFill(Color.PALEGOLDENROD);
         }
         else {
-            p1.setTextFill(Color.BLACK);
-            p2.setTextFill(Color.GREEN);
+            p1.setTextFill(Color.PALEGOLDENROD);
+            p2.setTextFill(Color.GOLD);
         }
 
     }
 
     private void won(ObservableValue<? extends String> observableValue, String win, String win2) {
         winner.setText(win2 + " won the game!");
-        p1.setTextFill(Color.BLACK);
+        p1.setTextFill(Color.PALEGOLDENROD);
         GameResult result = new GameResult(state.getPlayer1Name(), state.getPlayer2Name(), win2,
                 state.getPlayer1ScoreProperty().getValue(), state.getPlayer2ScoreProperty().getValue(),
                 ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd. - HH:mm:ss"  )));

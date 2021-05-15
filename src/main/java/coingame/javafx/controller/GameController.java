@@ -39,7 +39,7 @@ public class GameController {
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
-            p1nameText.setText(p1name);
+            p1nameText.setText(p1name + " starts the game!");
             state = new GameState(p1name, p2name);
 
         });

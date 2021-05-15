@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controller.LeaderboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #710c04;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controller.LeaderboardController">
    <top>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Leaderboard">
+            <Label text="Leaderboard" textFill="#ffdf00">
                <font>
                   <Font size="24.0" />
                </font>
@@ -23,18 +23,18 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#exitGame" prefHeight="40.0" prefWidth="66.0" text="Exit">
+            <Button mnemonicParsing="false" onAction="#exitGame" prefHeight="40.0" prefWidth="66.0" style="-fx-background-color: #EEE8AA;" text="Exit">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </HBox>
    </bottom>
    <center>
-      <TableView fx:id="leaderboardTable" prefHeight="395.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="leaderboardTable" prefHeight="395.0" prefWidth="700.0" BorderPane.alignment="CENTER"  >
         <columns>
-          <TableColumn fx:id="player1Name" prefWidth="116.6666667" text="Player1 name" />
+          <TableColumn fx:id="player1Name" prefWidth="116.6666667" text="Player1 name"/>
           <TableColumn fx:id="player1Score" minWidth="0.0" prefWidth="116.6666667" text="Player1 score" />
             <TableColumn fx:id="player2Name" prefWidth="116.6666667" text="Player2 name" />
             <TableColumn fx:id="player2Score" prefWidth="116.6666667" text="Player2 score" />
