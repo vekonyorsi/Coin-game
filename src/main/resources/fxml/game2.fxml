@@ -29,12 +29,12 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <Button layoutX="558.0" layoutY="400.0" mnemonicParsing="false" text="Give up">
+        <Button layoutX="558.0" layoutY="400.0" mnemonicParsing="false" onAction="#exitGame" text="Exit">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="51.0" layoutY="400.0" mnemonicParsing="false" text="Results">
+        <Button layoutX="51.0" layoutY="400.0" mnemonicParsing="false" onAction="#leaderAction" text="Results">
             <font>
                 <Font size="18.0" />
             </font>
@@ -59,9 +59,9 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="winner" alignment="CENTER" layoutX="255.0" layoutY="325.0" prefHeight="30.0" prefWidth="144.0" text="idkmiezmég">
+        <Label fx:id="winner" alignment="CENTER" layoutX="95.0" layoutY="262.0" prefHeight="74.0" prefWidth="509.0">
             <font>
-                <Font size="15.0" />
+                <Font size="36.0" />
             </font>
         </Label>
 
