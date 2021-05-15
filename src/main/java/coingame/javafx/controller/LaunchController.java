@@ -35,16 +35,21 @@ public class LaunchController {
     @FXML
     private Label p2error;
 
+    @FXML
+    private Label sameNameError;
+
 
     public void startAction(ActionEvent actionEvent) throws Exception {
 
         if (p1name.getText().isEmpty()) {
+            sameNameError.setText("");
             p1error.setText("Player1 is empty!");
         }
         else {
             p1error.setText("");
         }
         if (p2name.getText().isEmpty()) {
+            sameNameError.setText("");
             p2error.setText("Player2 is empty!");
         }
         else {
@@ -52,13 +57,19 @@ public class LaunchController {
         }
 
         if (!p1name.getText().isEmpty() && !p2name.getText().isEmpty()){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/game.fxml"));
-            Parent root = fxmlLoader.load();
-            GameController gameController = fxmlLoader.<GameController>getController();
-            gameController.setPlayersName(p1name.getText(), p2name.getText());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+            if(p1name.getText().equals(p2name.getText())){
+                sameNameError.setText("Please add " + "\n" + "different names!");
+            }
+            else {
+                sameNameError.setText("");
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/game.fxml"));
+                Parent root = fxmlLoader.load();
+                GameController gameController = fxmlLoader.<GameController>getController();
+                gameController.setPlayersName(p1name.getText(), p2name.getText());
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
         }
     }
 

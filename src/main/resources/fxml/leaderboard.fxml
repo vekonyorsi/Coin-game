@@ -32,14 +32,14 @@
       </HBox>
    </bottom>
    <center>
-      <TableView fx:id="leaderboardTable" prefHeight="395.0" prefWidth="700.0" BorderPane.alignment="CENTER"  >
+      <TableView fx:id="leaderboardTable" prefHeight="395.0" prefWidth="700.0" style="-fx-background-color: #EEE8AA;" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="player1Name" prefWidth="116.6666667" text="Player1 name"/>
-          <TableColumn fx:id="player1Score" minWidth="0.0" prefWidth="116.6666667" text="Player1 score" />
-            <TableColumn fx:id="player2Name" prefWidth="116.6666667" text="Player2 name" />
-            <TableColumn fx:id="player2Score" prefWidth="116.6666667" text="Player2 score" />
-            <TableColumn fx:id="winner" prefWidth="116.6666667" text="Winner" />
-            <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="116.6666667" text="Date" />
+          <TableColumn fx:id="player1Name" prefWidth="120.0" text="Player1 name" />
+          <TableColumn fx:id="player1Score" minWidth="0.0" prefWidth="100.0" text="Player1 score" />
+            <TableColumn fx:id="player2Name" prefWidth="120.0" text="Player2 name" />
+            <TableColumn fx:id="player2Score" prefWidth="100.0" text="Player2 score" />
+            <TableColumn fx:id="winner" prefWidth="120.0" text="Winner" />
+            <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="140.0" text="Date" />
         </columns>
       </TableView>
    </center>

@@ -15,7 +15,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -26,7 +26,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -37,7 +37,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -48,7 +48,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -59,7 +59,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -70,7 +70,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -81,7 +81,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -92,7 +92,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -103,7 +103,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -114,7 +114,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -125,7 +125,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -136,7 +136,7 @@
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>

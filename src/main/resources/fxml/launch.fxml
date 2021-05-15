@@ -25,22 +25,22 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="p1name" layoutX="311.0" layoutY="168.0" style="-fx-background-color: #EEE8AA;">
+      <TextField fx:id="p1name" layoutX="311.0" layoutY="168.0" prefHeight="40.0" prefWidth="201.0" style="-fx-background-color: #EEE8AA;">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="p2name" layoutX="311.0" layoutY="247.0" style="-fx-background-color: #EEE8AA;">
+      <TextField fx:id="p2name" layoutX="311.0" layoutY="247.0" prefHeight="40.0" prefWidth="202.0" style="-fx-background-color: #EEE8AA;">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label fx:id="p1error" alignment="CENTER" layoutX="361.0" layoutY="208.0" prefHeight="20.0" prefWidth="124.0" textFill="RED">
+      <Label fx:id="p1error" alignment="CENTER" layoutX="350.0" layoutY="208.0" prefHeight="20.0" prefWidth="124.0" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label fx:id="p2error" alignment="CENTER" layoutX="361.0" layoutY="287.0" prefHeight="20.0" prefWidth="124.0" textFill="RED">
+      <Label fx:id="p2error" alignment="CENTER" layoutX="350.0" layoutY="287.0" prefHeight="20.0" prefWidth="124.0" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
@@ -52,7 +52,7 @@
          <graphic>
             <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources.image/coin.png" />
+                  <Image url="@../image/coin.png" />
                </image>
             </ImageView>
          </graphic>
@@ -62,5 +62,10 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <Label fx:id="sameNameError" alignment="CENTER" contentDisplay="CENTER" layoutX="525.0" layoutY="194.0" prefHeight="68.0" prefWidth="146.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
