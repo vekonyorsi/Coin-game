@@ -8,7 +8,9 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GameResultDeserializer {
 
@@ -29,6 +31,6 @@ public class GameResultDeserializer {
         }catch(IOException e){
             e.printStackTrace();
         }
-        return gameResultList;
+        return gameResultList.stream().sorted(Comparator.comparing(GameResult::getDate).reversed()).collect(Collectors.toList());
     }
 }

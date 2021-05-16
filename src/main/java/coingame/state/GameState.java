@@ -5,18 +5,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+/**
+ * This class represents the state of the game.
+ */
 
 public class GameState {
 
     private Player player1;
-
     private Player player2;
-
     private StringProperty winnerName = new SimpleStringProperty();
-
     private ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 5, 6, 4, 8, 6, 4, 3, 1, 2, 2, 8));
-
 
     /**
      * Player1 true
@@ -25,6 +23,12 @@ public class GameState {
 
     private BooleanProperty currentPlayer = new SimpleBooleanProperty();
 
+    /**
+     * Returns the coinrow after the first player selected a coin,
+     * adds the selected coin's value to the first player's score.
+     *
+     * @param index gets the selected button's id.
+     */
     public void firstChoice(int index) {
         if(this.list.size() == 12){
             currentPlayer.set(!currentPlayer.getValue());
@@ -44,6 +48,12 @@ public class GameState {
     private int min = 1;
     private int max = 11;
 
+    /**
+     * This method adds the player's score the value of the coin in the left
+     * if they selected the first coin in the row.
+     *
+     * Calls the {@code winner} method.
+     */
     public void leftCut(){
         if (currentPlayer.getValue()) {
             player1.setScore(list.get(0));
@@ -57,6 +67,12 @@ public class GameState {
         winner();
     }
 
+    /**
+     * This method adds the player's score the value of the coin in the right
+     * if they selected the last coin in the row.
+     *
+     * Calls the {@code winner} method.
+     */
     public void rightCut(){
         if (currentPlayer.getValue()) {
             player1.setScore(list.get(list.size()-1));
@@ -70,6 +86,16 @@ public class GameState {
         winner();
     }
 
+    /**
+     * This method represents the step of a player.
+     *
+     * If it is the first coin, calls {@code leftCut} method.
+     * If it is the last coin, calls {@code rightCut} method.
+     *
+     * @param coinId the id of the pressed coin.
+     * @return returns true, if the player clicked on the first or last coin. If not, returns false.
+     *
+     */
     public boolean step(int coinId){
         if(coinId == min || coinId == max){
             if(coinId == min){
