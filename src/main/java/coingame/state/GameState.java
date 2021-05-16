@@ -1,16 +1,10 @@
 package coingame.state;
 
-
 import javafx.beans.property.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javassist.Loader;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.NoSuchElementException;
+
 
 
 public class GameState {
@@ -21,7 +15,7 @@ public class GameState {
 
     private StringProperty winnerName = new SimpleStringProperty();
 
-    private ListProperty<Integer> list = new SimpleListProperty<>();
+    private ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 5, 6, 4, 8, 6, 4, 3, 1, 2, 2, 8));
 
 
     /**
@@ -31,20 +25,20 @@ public class GameState {
 
     private BooleanProperty currentPlayer = new SimpleBooleanProperty();
 
-
     public void firstChoice(int index) {
-        currentPlayer.set(!currentPlayer.getValue());
-        player1.setScore(list.get(index));
-        list.remove(index);
-        ArrayList<Integer> list2 = new ArrayList<>();
-        for (int i = index; i < list.size(); i++){
-            list2.add(list.get(i));
+        if(this.list.size() == 12){
+            currentPlayer.set(!currentPlayer.getValue());
+            player1.setScore(list.get(index));
+            list.remove(index);
+            ArrayList<Integer> list2 = new ArrayList<>();
+            for (int i = index; i < list.size(); i++){
+                list2.add(list.get(i));
+            }
+            for (int i = 0; i < index; i++) {
+                list2.add(list.get(i));
+            }
+            list = list2;
         }
-        for (int i = 0; i < index; i++) {
-            list2.add(list.get(i));
-        }
-
-        list.set(FXCollections.observableArrayList(list2));
     }
 
     private int min = 1;
@@ -106,7 +100,6 @@ public class GameState {
     public GameState(String player1, String player2) {
         this.player1 = new Player(player1);
         this.player2 = new Player(player2);
-        this.list.set(FXCollections.observableArrayList(List.of(1, 5, 6, 4, 8, 6, 4, 3, 1, 2, 2, 8)));
         this.currentPlayer.set(true);
     }
 
@@ -116,10 +109,6 @@ public class GameState {
 
     public IntegerProperty getPlayer2ScoreProperty(){
         return player2.scoreProperty();
-    }
-
-    public boolean isCurrentPlayer() {
-        return currentPlayer.get();
     }
 
     public BooleanProperty currentPlayerProperty() {
@@ -134,11 +123,7 @@ public class GameState {
         return winnerName;
     }
 
-    public ObservableList<Integer> getList() {
-        return list.get();
-    }
-
-    public ListProperty<Integer> listProperty() {
+    public List<Integer> getList() {
         return list;
     }
 

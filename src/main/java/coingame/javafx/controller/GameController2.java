@@ -3,10 +3,7 @@ package coingame.javafx.controller;
 import coingame.results.GameResult;
 import coingame.results.GameResultSerializer;
 import coingame.state.GameState;
-import coingame.state.Player;
 import javafx.application.Platform;
-import javafx.beans.Observable;
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
@@ -90,7 +86,6 @@ public class GameController2 {
         });
 
     }
-
 
     private void player1Score(ObservableValue<? extends Number> observableValue, Number oldP1Score, Number newP1Score) {
         p1_score.setText(newP1Score.toString());
