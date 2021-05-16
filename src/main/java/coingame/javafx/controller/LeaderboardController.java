@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.tinylog.Logger;
 
 import java.util.List;
 
@@ -38,24 +39,20 @@ public class LeaderboardController {
 
     public void initialize(){
         List<GameResult> leaderboardList = GameResultDeserializer.deserialize();
-
         player1Name.setCellValueFactory(new PropertyValueFactory<>("player1Name"));
         player2Name.setCellValueFactory(new PropertyValueFactory<>("player2Name"));
         winner.setCellValueFactory(new PropertyValueFactory<>("winner"));
         player1Score.setCellValueFactory(new PropertyValueFactory<>("player1Score"));
         player2Score.setCellValueFactory(new PropertyValueFactory<>("player2Score"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-
         ObservableList<GameResult> observableResult = FXCollections.observableArrayList();
         observableResult.addAll(leaderboardList);
-
         leaderboardTable.setItems(observableResult);
-
+        Logger.info("Loading leaderboard..");
     }
 
-
-
     public void exitGame(ActionEvent actionEvent) {
+        Logger.info("Exiting..");
         Platform.exit();
     }
 }

@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 import java.time.ZonedDateTime;
@@ -80,8 +81,9 @@ public class GameController2 {
             p2.setText(state.getPlayer2Name());
             p2.setTextFill(Color.GOLD);
             p1_score.setText(state.getPlayer1ScoreProperty().getValue().toString());
-            state.getPlayer1ScoreProperty().addListener(this::player1Score);
             state.getPlayer2ScoreProperty().addListener(this::player2Score);
+            Logger.info("Updating {}'s and {}'s score.", state.getPlayer1Name(), state.getPlayer2Name());
+            state.getPlayer1ScoreProperty().addListener(this::player1Score);
             state.currentPlayerProperty().addListener(this::currentPlayer);
             state.winnerNameProperty().addListener(this::won);
             buttonName();
@@ -118,9 +120,8 @@ public class GameController2 {
                 state.getPlayer1ScoreProperty().getValue(), state.getPlayer2ScoreProperty().getValue(),
                 ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd. - HH:mm:ss"  )));
         GameResultSerializer.serialize(result);
-
+        state.getPlayer1ScoreProperty().addListener(this::player1Score);
     }
-
 
     private void buttonName(){
         new_1.setText(state.getList().get(0).toString());
@@ -136,15 +137,14 @@ public class GameController2 {
         new_11.setText(state.getList().get(10).toString());
     }
 
-
     public void gameAction(ActionEvent actionEvent) {
-
         String[] buttonid = ((Button) actionEvent.getSource()).getId().split("_");
         Button button = (Button) actionEvent.getSource();
         if(state.step(Integer.parseInt(buttonid[1]))) {
             button.setVisible(false);
 
         }
+        Logger.info("Deleting the {}. coin from the row.", buttonid[1]);
 
     }
 
@@ -157,12 +157,12 @@ public class GameController2 {
         stage.show();
     }
 
-
     public void setState(GameState state){
         this.state = state;
     }
 
     public void exitGame(ActionEvent actionEvent) {
+        Logger.info("Exiting..");
         Platform.exit();
     }
 

@@ -16,25 +16,21 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import lombok.extern.slf4j.Slf4j;
+import org.tinylog.Logger;
 
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
 
-@Slf4j
 public class GameController {
     @FXML
     Text p1nameText;
-
 
     private String p1name;
     private String p2name;
 
     private GameState state;
-
-
 
     @FXML
     private void initialize() {
@@ -43,7 +39,6 @@ public class GameController {
             state = new GameState(p1name, p2name);
 
         });
-
     }
 
     public void openAction(ActionEvent actionEvent) throws Exception {
@@ -60,13 +55,12 @@ public class GameController {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+        Logger.info("Loading second game scene..");
     }
 
     public void setPlayersName(String p1name, String p2name) {
         this.p1name = p1name;
         this.p2name = p2name;
     }
-
-
 
 }

@@ -1,5 +1,6 @@
 package coingame.javafx.controller;
 
+import org.tinylog.Logger;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
@@ -16,7 +17,6 @@ import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-
 
 
 public class LaunchController {
@@ -69,13 +69,13 @@ public class LaunchController {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
+                Logger.info("Setting the names to {} and {}, loading game scene..", p1name.getText(), p2name.getText());
             }
         }
     }
 
     public void exitGame(ActionEvent actionEvent) {
-        //log.debug("{} button is pressed", ((Button)actionEvent.getSource()).getText());
-        //log.info("Exiting...");
+        Logger.info("Exiting...");
         Platform.exit();
     }
 
