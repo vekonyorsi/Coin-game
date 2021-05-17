@@ -13,7 +13,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
+/**
+ * This is the controller of the launch scene.
+ */
 public class LaunchController {
     @FXML
     private TextField p1name;
@@ -34,6 +36,15 @@ public class LaunchController {
     private Label sameNameError;
 
 
+    /**
+     * This method is called by clikcking on the start button if both of the player's name is written in
+     * and the names are different.
+     *
+     * Setting the players' name for the next scene.
+     *
+     * @param actionEvent The current action event.
+     * @throws Exception If the wanted scene cannot be found.
+     */
     public void startAction(ActionEvent actionEvent) throws Exception {
 
         if (p1name.getText().isEmpty()) {
@@ -69,6 +80,11 @@ public class LaunchController {
         }
     }
 
+    /**
+     * This method is called by pressing exit button.
+     *
+     * @param actionEvent The current action event.
+     */
     public void exitGame(ActionEvent actionEvent) {
         Logger.info("Exiting...");
         Platform.exit();

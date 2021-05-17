@@ -12,10 +12,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.tinylog.Logger;
 
-import java.util.Comparator;
 import java.util.List;
 
-
+/**
+ * This class contains the controller for the leader board.
+ */
 public class LeaderboardController {
     @FXML
     private TableView<GameResult> leaderboardTable;
@@ -38,6 +39,10 @@ public class LeaderboardController {
     @FXML
     private TableColumn<GameResult, String> dateColumn;
 
+    /**
+     * This method initialize the two players' name, the winner's name, the players' score
+     * and the date when tha game is played.
+     */
     public void initialize(){
         List<GameResult> leaderboardList = GameResultDeserializer.deserialize();
         player1Name.setCellValueFactory(new PropertyValueFactory<>("player1Name"));
@@ -52,6 +57,11 @@ public class LeaderboardController {
         Logger.info("Loading leaderboard..");
     }
 
+    /**
+     * This method is called by pressing exit button.
+     *
+     * @param actionEvent The current action event.
+     */
     public void exitGame(ActionEvent actionEvent) {
         Logger.info("Exiting..");
         Platform.exit();

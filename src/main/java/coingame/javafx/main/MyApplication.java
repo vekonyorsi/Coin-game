@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * The class that controls the game's GUI.
+ */
 public class MyApplication extends Application {
 
     @Override

@@ -21,7 +21,9 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-
+/**
+ * This class is for the second page of the Coin-game.
+ */
 public class GameController2 {
     @FXML
     Button new_1;
@@ -52,7 +54,7 @@ public class GameController2 {
     Label p2;
 
     @FXML
-    Label p1_score; //= player1.getScore();
+    Label p1_score;
     @FXML
     Label p2_score;
 
@@ -132,6 +134,14 @@ public class GameController2 {
         new_11.setText(state.getList().get(10).toString());
     }
 
+    /**
+     * This method is called when a plyer clicks on a coin from the coinrow.
+     *
+     * Calls the {@link GameState} model's {@code step} method.
+     *
+     * @param actionEvent the current action event.
+     */
+    @FXML
     public void gameAction(ActionEvent actionEvent) {
         String[] buttonid = ((Button) actionEvent.getSource()).getId().split("_");
         Button button = (Button) actionEvent.getSource();
@@ -152,10 +162,20 @@ public class GameController2 {
         stage.show();
     }
 
+    /**
+     * A method that sets the state of the game to {@code state}.
+     *
+     * @param state The new state of the game.
+     */
     public void setState(GameState state){
         this.state = state;
     }
 
+    /**
+     * This method is called by pressing exit button.
+     *
+     * @param actionEvent The current action event.
+     */
     public void exitGame(ActionEvent actionEvent) {
         Logger.info("Exiting..");
         Platform.exit();

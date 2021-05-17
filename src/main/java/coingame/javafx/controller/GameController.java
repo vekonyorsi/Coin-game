@@ -13,7 +13,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
-
+/**
+ * The controller class for the first game scene.
+ */
 public class GameController {
     @FXML
     Text p1nameText;
@@ -23,6 +25,10 @@ public class GameController {
 
     private GameState state;
 
+
+    /**
+     * The initialize method that runs when the scene is opened.
+     */
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
@@ -32,6 +38,14 @@ public class GameController {
         });
     }
 
+    /**
+     * A method that is called when a player choses a coin from the conincircle.
+     *
+     * Gets the clicked coin's id, giving it to the {@link GameState} model's {@code firstChoice} method.
+     *
+     * @param actionEvent   the current action event.
+     * @throws Exception    if the next scene can not be found
+     */
     public void openAction(ActionEvent actionEvent) throws Exception {
 
         String button = ((Button) actionEvent.getSource()).getId();
@@ -49,6 +63,12 @@ public class GameController {
         Logger.info("Loading second game scene..");
     }
 
+    /**
+     * This method sets the two playing person's name to {@code p1name} and {@code p2name}.
+     *
+     * @param p1name    The name of the first player.
+     * @param p2name    The name of the second player.
+     */
     public void setPlayersName(String p1name, String p2name) {
         this.p1name = p1name;
         this.p2name = p2name;

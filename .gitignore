@@ -170,6 +170,7 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
+*.json
 
 ### NetBeans ###
 **/nbproject/private/

@@ -17,15 +17,15 @@ public class GameState {
     private ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 5, 6, 4, 8, 6, 4, 3, 1, 2, 2, 8));
 
     /**
-     * Player1 true
-     * Player2 false
+     * Player1 true.
+     * Player2 false.
      */
 
     private BooleanProperty currentPlayer = new SimpleBooleanProperty();
 
     /**
-     * Returns the coinrow after the first player selected a coin,
-     * adds the selected coin's value to the first player's score.
+     * This method is called when the first player chooses from the coin-circle.
+     * Sets the coins in row and adds the selected coin's value to the first player's score.
      *
      * @param index gets the selected button's id.
      */
@@ -93,7 +93,7 @@ public class GameState {
      * If it is the last coin, calls {@code rightCut} method.
      *
      * @param coinId the id of the pressed coin.
-     * @return returns true, if the player clicked on the first or last coin. If not, returns false.
+     * @return returns {@code true}, if the player clicked on the first or last coin. If not, returns {@code false}.
      *
      */
     public boolean step(int coinId){
@@ -112,6 +112,10 @@ public class GameState {
     }
 
 
+    /**
+     * This method decides who the winner is.
+     * If all the coins are selected by the 2 players, checks the scores.
+     */
     public void winner() {
         if (list.isEmpty()) {
             if(player1.getScore() > player2.getScore()) {
@@ -123,40 +127,88 @@ public class GameState {
         }
     }
 
+    /**
+     * Create an instance of {@code GameState} object.
+     * Initializes the two players' name with the corresponding parameters given.
+     * Sets the {@code currentPlayer}'s value to true.
+     *
+     * @param player1 Name of the first player.
+     * @param player2 Name of the second player.
+     */
     public GameState(String player1, String player2) {
         this.player1 = new Player(player1);
         this.player2 = new Player(player2);
         this.currentPlayer.set(true);
     }
 
+    /**
+     * Gets the {@link  Property} object containing the score of {@code Player1Score}.
+     *
+     * @return a {@link IntegerProperty} object.
+     */
     public IntegerProperty getPlayer1ScoreProperty(){
         return player1.scoreProperty();
     }
 
+    /**
+     * Gets the {@link  Property} object containing the score of {@code Player2Score}.
+     *
+     * @return a {@link IntegerProperty} object.
+     */
     public IntegerProperty getPlayer2ScoreProperty(){
+
         return player2.scoreProperty();
     }
 
+    /**
+     * Gets the {@link  Property} object containing the  {@code currentPlayer}.
+     *
+     * @return a {@link BooleanProperty} object.
+     */
     public BooleanProperty currentPlayerProperty() {
         return currentPlayer;
     }
 
+
+    /**
+     * Getter of the {@code WinnerName}
+     * @return the name of the winner from the {@code winnerNameProperty}
+     */
     public String getWinnerName() {
         return winnerName.get();
     }
 
+    /**
+     * Returns a {@link Property} containing the name of the winner.
+     * @return the {winnerName}.
+     */
     public StringProperty winnerNameProperty() {
         return winnerName;
     }
 
+    /**
+     * Gets a {@link List} of integers. Contains the values of the coins.
+     *
+     * @return a {@link List} of integers.
+     */
     public List<Integer> getList() {
         return list;
     }
 
+    /**
+     * Getter of the {@code player1Name}.
+     *
+     * @return the first player's name.
+     */
     public String getPlayer1Name(){
         return player1.getName();
     }
 
+    /**
+     * Getter of the {@code player2Name}.
+     *
+     * @return the second player's name.
+     */
     public String getPlayer2Name(){
         return player2.getName();
     }
