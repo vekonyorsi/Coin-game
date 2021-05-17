@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #710c04;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controller.LeaderboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #710c04;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controller.LeaderboardController">
    <top>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
@@ -34,9 +30,9 @@
    <center>
       <TableView fx:id="leaderboardTable" prefHeight="395.0" prefWidth="700.0" style="-fx-background-color: #EEE8AA;" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="player1Name" prefWidth="120.0" text="Player1 name" />
-          <TableColumn fx:id="player1Score" minWidth="0.0" prefWidth="100.0" text="Player1 score" />
-            <TableColumn fx:id="player2Name" prefWidth="120.0" text="Player2 name" />
+          <TableColumn fx:id="player1Name" prefWidth="120.0" text="P1 name" />
+          <TableColumn fx:id="player1Score" minWidth="0.0" prefWidth="100.0" text="P1 score" />
+            <TableColumn fx:id="player2Name" prefWidth="120.0" text="P2 name" />
             <TableColumn fx:id="player2Score" prefWidth="100.0" text="Player2 score" />
             <TableColumn fx:id="winner" prefWidth="120.0" text="Winner" />
             <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="140.0" text="Date" />
