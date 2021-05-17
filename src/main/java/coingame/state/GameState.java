@@ -171,8 +171,8 @@ public class GameState {
 
 
     /**
-     * Getter of the {@code WinnerName}
-     * @return the name of the winner from the {@code winnerNameProperty}
+     * Getter of the {@code WinnerName}.
+     * @return the name of the winner from the {@code winnerNameProperty}.
      */
     public String getWinnerName() {
         return winnerName.get();
